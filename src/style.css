@@ -1,12 +1,12 @@
 *{
   padding: 0px;
   margin: 0px;
-  box-sizing: border-box;
+  box-sizing: border-box; font-family: "Share Tech", sans-serif;
 }
 header{
   width: 100%;
   height: auto;
-  font-family: "Share Tech", sans-serif;
+ 
 }
 nav{
   width: 100%;
@@ -27,19 +27,19 @@ nav{
   font-size: 20px;
 }
 .nav-links{
-  width: 60%;
+  width: 70%;
 }
 .nav-links>ul{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   list-style-type: none;
-  gap: 60px;
+  
   font-size: 22px;
   text-transform: uppercase;
 }
 .mode-and-user{
-  width: 15%;
+  width: 10%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -52,6 +52,101 @@ nav{
 .darkmode-animation{
   background-color:rgb(0, 7, 20);
   color: whitesmoke;
+}
+
+.slider {
+  width: 100%;
+ height: auto;
+  position: absolute;
+  top: 64px;
+ 
+  overflow: hidden; /* Hides extra slides off-screen */
+}
+
+.slide-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+ 
+  transition: transform 0.5s ease-in-out; /* Smooth transition when sliding */
+}
+
+.slide {
+  min-width: 100%; /* Prevents slides from shrinking */
+  height: 100%;
+  padding: 0px 70px 0px 90px;
+  position: relative; 
+  background-color:rgb(233, 231, 231);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Keeps the button positioned inside the slide */
+}
+.slide>img{
+  width: 60%;
+}
+
+
+/* Button centered over the image */
+
+.shopdiv{
+  display: flex;
+  justify-content: flex-start;
+  width: 30%;
+ 
+}
+.shopdiv>button{
+  font-size: 25px;
+  background-color: whitesmoke;
+  border: none;
+  padding: 10px 30px 10px 30px;
+  text-transform: uppercase;
+  margin-left: 70px;
+}
+.shopdiv > button:hover {
+  color: rgb(0, 7, 20);
+  border: 1px solid whitesmoke;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.btn{
+position: absolute;
+  top:45%;
+  left: 0%;
+  width: 100%;
+  display: flex;
+  padding: 0px 20px 0px 20px;
+  justify-content: space-between;
+}
+.pre, .next{
+  background-color:transparent;
+  font-size: 40px;
+  border: none;
+  color: whitesmoke;
+}
+/* Container for navigation arrows */
+@media (max-width:762px) {
+  .slide{
+    flex-direction: column;
+    padding: 0px;
+    gap: 10px;
+  }
+  .slide>img{
+    width: 100%;
+  }
+ .shopdiv>button{
+font-size: 22px;
+width: 60%;
+margin-left: 0px;
+
+ }
+ .shopdiv{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
 }
 
 @media (max-width:700px) {
@@ -96,5 +191,8 @@ nav{
 flex-direction: column;
 color: rgb(0, 7, 20);
 font-size: 25px;
+}
+.pre, .next{
+  font-size: 20px;
 }
 }
