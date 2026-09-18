@@ -13,8 +13,65 @@ let loadingtext = loadingpagetext.innerText;
 let totalSlides = loadingtext.length;
 let totalSlides1 = slides.length;
 let startnumber = 0;
+// Ensure this selector exactly matches your HTML class attribute
+const searchInput = document.querySelector(".artist-search-input"); 
+
+// Active character input listener routine for matching search queries
 
 
+const otherartistname = document.querySelector(".otherartist-name");
+
+const artistbox = [
+  {
+    image : "/src/assets/image/btslogo.jpg" ,
+    name : "BTS"
+},  {
+    image : "/src/assets/image/txtlogo.jpg" ,
+    name : "TXT"
+}, {
+    image : "/src/assets/image/aespalogo.jpg" ,
+    name : "aespa"
+}, {
+    image : "/src/assets/image/cortislogo.jpg" ,
+    name : "Cortis"
+}, {
+    image : "/src/assets/image/seventhlogo.jpg" ,
+    name : "SEVENTEEN"
+},
+ {
+    image : "/src/assets/image/twicelogo.jpg" ,
+    name : "Twice"
+}, {
+    image : "/src/assets/image/illietlogo.jpg" ,
+    name : "illiet"
+}
+];
+
+
+artistbox.forEach(function(artist){
+   const detailsartist = document.createElement("div");
+  detailsartist.classList.add("artist-card");
+
+  detailsartist.innerHTML = `
+    <img src="${artist.image}" alt="${artist.name}" class="artist-img">
+    <h3 class="artist-title">${artist.name}</h3>
+  `;
+
+  otherartistname.appendChild(detailsartist);
+});
+
+searchInput.addEventListener("input", function(e) {
+  // Capture user typing string, convert to lowercase, and clear whitespace spaces
+  const searchTerm = e.target.value.toLowerCase().trim();
+
+  // Filter out original master artistbox array list
+  const filteredArtists = artistbox.filter(function(artist) {
+    return artist.name.toLowerCase().includes(searchTerm);
+  });
+
+  // Re-run the rendering script to dynamically paste ONLY matching elements
+  displayArtists(filteredArtists);
+});
  
   const texttimer = setInterval(function(){
     startnumber++;

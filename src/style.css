@@ -47,7 +47,7 @@ nav{
   padding: 20px 10px 20px 10px;
   background-color: rgb(0, 7, 20);
   position: fixed;
-  top: 0px;
+  top: 0px;z-index: 3;
 }
 .navbar{
   width: 100%;
@@ -55,6 +55,7 @@ nav{
   justify-content: space-between;
   align-items: center;
   color: whitesmoke;
+  
 }
 .logo{
   width: 10%;
@@ -93,8 +94,8 @@ body.darkmode-animation{
 .slider {
   width: 100%;
  height: auto;
-  position: absolute;
-  top: 64px;
+  position:relative;
+  margin-top: 70px;
  
   overflow: hidden; /* Hides extra slides off-screen */
 }
@@ -168,6 +169,69 @@ position: absolute;
 h1{
   font-size: 60px;
   color: rgb(0, 7, 20);
+}
+.otherartists-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.other-artists{
+  width: 95%;
+  height: auto;
+  padding: 10px;
+  background-color: rgb(233, 231, 231);
+  border: 1px solid rgb(214, 212, 212);
+}
+.otherartist-title{
+font-size: 30px;
+  text-transform: uppercase;
+}
+.search-container{
+  width: 100%;
+  margin-top: 10px;
+}
+.search-container>input{
+  width: 100%;
+  padding: 10px;
+  
+}
+.search-container>input::placeholder{
+  font-size: 20px;
+}
+
+.otherartist-name{
+  width: 100%;
+  height: 30vh;
+  background-color: whitesmoke;
+  margin-top: 10px;
+  
+ overflow: scroll;
+}
+.artist-card {
+
+  background-color: white;
+  border: 1px solid rgb(218, 218, 218);
+ 
+  padding: 10px;
+  text-align: center;
+  width: 100%;          /* Width of individual artist badges */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.artist-img {
+  width: 100px;
+  height: 100px;    /* Makes logo pictures round */
+  object-fit: cover;     /* Keeps image aspect ratios clean */
+  margin-bottom: 10px;
+}
+.artist-title{
+  margin-right: 20px;
+  font-size: 30px;
 }
 /* Container for navigation arrows */
 @media (max-width:762px) {
