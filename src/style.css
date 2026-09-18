@@ -3,10 +3,44 @@
   margin: 0px;
   box-sizing: border-box; font-family: "Share Tech", sans-serif;
 }
+.body-content{
+  display: none;
+}
+.loading-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; background-color: rgb(233, 231, 231);
+}
+.loadingpage-body{
+ width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+ 
+}
+.loadingpage-logo{
+  overflow: hidden;
+  padding: 10px;
+ 
+}
+h2{
+  margin-top: 20px;
+  margin-left: 20px;
+  text-transform: uppercase;
+  display: none;
+}
+.loadingpage-logo>i{
+  color: rgb(0, 7, 20);
+  font-size: 100px;
+ z-index: -3;
+}
+
 header{
   width: 100%;
   height: auto;
- 
 }
 nav{
   width: 100%;
@@ -24,8 +58,10 @@ nav{
 }
 .logo{
   width: 10%;
-  font-size: 20px;
+  font-size: 30px;
+ color: whitesmoke;
 }
+
 .nav-links{
   width: 70%;
 }
@@ -49,7 +85,7 @@ nav{
 .bars{
   display: none;
 }
-.darkmode-animation{
+body.darkmode-animation{
   background-color:rgb(0, 7, 20);
   color: whitesmoke;
 }
@@ -74,7 +110,7 @@ nav{
 .slide {
   min-width: 100%; /* Prevents slides from shrinking */
   height: 100%;
-  padding: 0px 70px 0px 90px;
+  padding: 0px 100px 0px 90px;
   position: relative; 
   background-color:rgb(233, 231, 231);
   display: flex;
@@ -93,6 +129,9 @@ nav{
   display: flex;
   justify-content: flex-start;
   width: 30%;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
  
 }
 .shopdiv>button{
@@ -101,13 +140,14 @@ nav{
   border: none;
   padding: 10px 30px 10px 30px;
   text-transform: uppercase;
-  margin-left: 70px;
+
 }
 .shopdiv > button:hover {
-  color: rgb(0, 7, 20);
-  border: 1px solid whitesmoke;
-  background-color: transparent;
+  color: whitesmoke;
+ 
+  background-color:rgb(0, 7, 20);
   backdrop-filter: blur(10px);
+  transition: border 1s ease-in-out;
 }
 
 .btn{
@@ -123,7 +163,11 @@ position: absolute;
   background-color:transparent;
   font-size: 40px;
   border: none;
-  color: whitesmoke;
+  color: rgb(0, 7, 20);
+}
+h1{
+  font-size: 60px;
+  color: rgb(0, 7, 20);
 }
 /* Container for navigation arrows */
 @media (max-width:762px) {
