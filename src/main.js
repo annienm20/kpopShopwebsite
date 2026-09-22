@@ -60,18 +60,6 @@ artistbox.forEach(function(artist){
   otherartistname.appendChild(detailsartist);
 });
 
-searchInput.addEventListener("input", function(e) {
-  // Capture user typing string, convert to lowercase, and clear whitespace spaces
-  const searchTerm = e.target.value.toLowerCase().trim();
-
-  // Filter out original master artistbox array list
-  const filteredArtists = artistbox.filter(function(artist) {
-    return artist.name.toLowerCase().includes(searchTerm);
-  });
-
-  // Re-run the rendering script to dynamically paste ONLY matching elements
-  displayArtists(filteredArtists);
-});
  
   const texttimer = setInterval(function(){
     startnumber++;
