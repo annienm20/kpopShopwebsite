@@ -181,11 +181,10 @@ h1{
   width: 95%;
   height: auto;
   padding: 10px;
-  background-color: rgb(233, 231, 231);
-  border: 1px solid rgb(214, 212, 212);
+ 
 }
 .otherartist-title{
-font-size: 30px;
+font-size: 50px;
   text-transform: uppercase;
 }
 .search-container{
@@ -195,46 +194,80 @@ font-size: 30px;
 .search-container>input{
   width: 100%;
   padding: 10px;
+  font-size: 25px;
   
 }
 .search-container>input::placeholder{
   font-size: 20px;
 }
 
-.otherartist-name{
+.otherartist-name {
   width: 100%;
-  height: 30vh;
-  background-color: whitesmoke;
-  margin-top: 10px;
-  
- overflow: scroll;
-}
-.artist-card {
+  height: auto;
 
-  background-color: white;
-  border: 1px solid rgb(218, 218, 218);
+  margin-top: 16px;
+}
+
+.showname {
+  width: 100%;
+  display: flex ;
+  flex-direction: row; /* Stacks image and name vertically */
+  justify-content: space-between; 
+  align-items: center;  
+    /* Centers the items horizontally */
+              /* Adds clean spacing between image and text */
+}
+
+/* REMOVED width: 20% from here so the container can center properly */
+.artist-image {
+  width: 15%;           /* Set a fixed pixel width for the logo sizing instead of 20% */
+padding: 10px;
+
+border-radius: 20%;}
+
+
+.artist-image img {
+  width: 100%;
+  height: 100%;box-shadow: 0px 0px 5px gray;
+  border-radius: 20%;
+  object-fit:fill;      /* Prevents the artist logo from stretching awkwardly */
+   /* Optional: Makes the logo a clean circle */
+}
+
+.artist-groupname {
  
-  padding: 10px;
-  text-align: center;
-  width: 100%;          /* Width of individual artist badges */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  width:40%;            /* Let the width adapt to the text size */
+  text-align: center;     /* FIXED: Forces the text to center perfectly */
+  font-weight: bold;
+  font-size:70px;
+}
+.notfound{
+  font-size: 30px;
+  text-transform: uppercase;
   display: flex;
-justify-content: space-between;
-align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
+.notfound>button{
 
-.artist-img {
-  width: 100px;
-  height: 100px;    /* Makes logo pictures round */
-  object-fit: cover;     /* Keeps image aspect ratios clean */
-  margin-bottom: 10px;
+ background-color: rgb(0, 7, 20);
+ color: whitesmoke;
+  border: none;
+  font-size: 30px;
+  box-shadow: 0px 0px 3px ghostwhite;
+  padding: 10px;
 }
-.artist-title{
-  margin-right: 20px;
+.showname>button{
+
+ background-color: transparent;
+  border: none;
   font-size: 30px;
 }
 /* Container for navigation arrows */
 @media (max-width:762px) {
+  .pre, .next{
+    color: whitesmoke;
+  }
   .slide{
     flex-direction: column;
     padding: 0px;
@@ -254,6 +287,7 @@ margin-left: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
  }
 }
 
@@ -303,4 +337,57 @@ font-size: 25px;
 .pre, .next{
   font-size: 20px;
 }
+.artist-image {
+  width: 30%;           /* Set a fixed pixel width for the logo sizing instead of 20% */
+padding: 10px;
+
+border-radius: 20%;
+}
+.shopdiv{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0px 20px 0px 20px;
+}
+.shopdiv>h1{
+  width: 40%;
+  
+}
+.shopbtn{
+  width: 50%;
+}
+}
+@media (max-width:500px) {
+  .artist-groupname{
+    font-size: 40px;
+  }
+  .artist-image {
+    width: 40%;
+  }
+  .notfound>button{
+    font-size: 20px;
+    width: 12%;
+  }
+  .notfound{
+    font-size: 25px;
+  }
+  .otherartists-container{
+    padding: 10px;
+    text-align: center;
+  }
+  .otherartist-title{
+    font-size: 40px;
+  }
+  .search-container>input{
+    padding: 5px;
+  }
+  .shopdiv>h1{
+    font-size: 40px;
+  }
+ .shopdiv>button{
+  padding: 6px 10px 6px 10px;
+ }
+
 }

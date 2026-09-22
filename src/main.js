@@ -13,13 +13,12 @@ let loadingtext = loadingpagetext.innerText;
 let totalSlides = loadingtext.length;
 let totalSlides1 = slides.length;
 let startnumber = 0;
-// Ensure this selector exactly matches your HTML class attribute
-const searchInput = document.querySelector(".artist-search-input"); 
 
-// Active character input listener routine for matching search queries
 
 
 const otherartistname = document.querySelector(".otherartist-name");
+const searchbar = document.querySelector(".search-bar");
+const showartist = document.querySelector(".otherartist-name");
 
 const artistbox = [
   {
@@ -46,19 +45,31 @@ const artistbox = [
     name : "illiet"
 }
 ];
+ function searchfunction(){
+const inputvalue = searchbar.value.trim().toUpperCase();
+const functioninput = artistbox.find(artistname => artistname.name.toUpperCase() === inputvalue );
+if(functioninput){
+showartist.innerHTML = `<div class ="showname">
+<div class = "artist-image">   <img src="${functioninput.image}" alt="${functioninput.name}"></div>
+<div class = "artist-groupname">${functioninput.name}</div>
 
+</div>`;
+}
+else{
+  showartist.innerHTML =`<div class = "notfound">
+  result not found<button class= "close-display">X</button></div>`;
+}
+const closedisplay = document.querySelector(".close-display");
+const notfo = document.querySelector(".notfound");
 
-artistbox.forEach(function(artist){
-   const detailsartist = document.createElement("div");
-  detailsartist.classList.add("artist-card");
+closedisplay.addEventListener("click", () =>{
+notfo.style.display = "none";
 
-  detailsartist.innerHTML = `
-    <img src="${artist.image}" alt="${artist.name}" class="artist-img">
-    <h3 class="artist-title">${artist.name}</h3>
-  `;
-
-  otherartistname.appendChild(detailsartist);
 });
+}
+
+searchbar.addEventListener("input", searchfunction);
+
 
  
   const texttimer = setInterval(function(){
